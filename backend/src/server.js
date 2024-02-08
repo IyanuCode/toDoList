@@ -40,7 +40,7 @@ So, with this configuration, my server allows cross-origin requests only from ht
  development when frontend and backend are running on different servers, and want to enable them to communicate.
 */
 app.use(cors(
-    {origin:["http://localhost:3000"]}
+    {origin:["http://localhost:3000", "https://to-do-list-front-end-liart.vercel.app/"]}
 ))
 
 app.use(express.json())
