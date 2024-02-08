@@ -26,7 +26,7 @@ const TaskList = () => {
   const createTask=async(e)=>{
     e.preventDefault()
     try {
-      await axios.post('http://localhost:8000/api/tasks', formData)
+      await axios.post('https://todolistbackendproject.onrender.com', formData)
       setFormData({name:''})
       console.log(formData);
       getAllTask()
@@ -49,7 +49,8 @@ const TaskList = () => {
   */
   const getAllTask = async()=>{
     try {
-      const{data}=await axios.get("http://localhost:8000/api/tasks")
+      //const{data}=await axios.get("https://todolistbackendproject.onrender.com")
+      const{data}=await axios.get("https://todolistbackendproject.onrender.com")
       setTask(data)
     } catch (error) {
       console.log(error);
@@ -62,7 +63,8 @@ const TaskList = () => {
     //Function to delete a task
     const deleteTask = async (taskId) => {
       try {
-        await axios.delete(`http://localhost:8000/api/tasks/${taskId}`);
+        //await axios.delete(`http://localhost:8000/api/tasks/${taskId}`);
+        await axios.delete(`https://todolistbackendproject.onrender.com/${taskId}`);
         getAllTask(); // Refresh the task list after deletion
         toast.success('Task deleted successfully!');
       } catch (error) {
@@ -76,7 +78,8 @@ const TaskList = () => {
     //Function to update a task
     const updateTask = async (taskId,updatedData) => {
       try {
-        await axios.put(`http://localhost:8000/api/tasks/${taskId}`, { name: updatedData });
+        //await axios.put(`http://localhost:8000/api/tasks/${taskId}`, { name: updatedData });
+        await axios.put(`https://todolistbackendproject.onrender.com/${taskId}`, { name: updatedData });
         getAllTask();
         toast.success(' Task Updated Successfully');
       } catch (error) {
