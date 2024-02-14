@@ -99,11 +99,12 @@ const TaskList = () => {
             <b>Completed Tasks:</b> 0
           </h3>
         </div>
-        { 
+        {/* { 
           tasks.map((data, index) => (
             <Task tasks={data} key={data._id} index={index} onDelete={deleteTask} onUpdate={updateTask}  />
           ))
-        }
+        } */}
+      
 
 
        <Form createTask={createTask} handleInputChange={handleInputChange} name={name}  />
